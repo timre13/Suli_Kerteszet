@@ -1,5 +1,8 @@
 <script setup lang="ts"></script>
 
 <template>
-    <h2>Home</h2>
+    <div>
+        <h1>Home</h1>
+        <!-- p*3>Lorem200*5 -->
+    </div>
 </template>
