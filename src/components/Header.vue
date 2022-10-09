@@ -7,7 +7,7 @@
         </div>
         <div id="navbox">
             <div id="title">
-                <span>{{ currentRoute.meta.title }}:</span>
+                <span>{{ currentRoute.meta.title }}{{ currentRoute.meta.title ? ":" : "" }}</span>
             </div>
             <div id="link">
                 <RouterLink to="/contacts">Elérhetőség</RouterLink>
