@@ -3,24 +3,24 @@
 <template>
     <div id="wrapper">
         <form action="" method="post">
-                <div class="input-div small">
-                    <div class="inner-div">
-                        <label for="name-input">Név:</label>
-                        <input name="name-input">
-                    </div>
+            <div class="input-div small">
+                <div class="inner-div">
+                    <label for="name-input">Név:</label>
+                    <input name="name-input" />
                 </div>
-                <div class="input-div small center">
-                    <div class="inner-div">
-                        <label for="email-input">E-mail:</label>
-                        <input name="email-input" type="email">
-                    </div>
+            </div>
+            <div class="input-div small center">
+                <div class="inner-div">
+                    <label for="email-input">E-mail:</label>
+                    <input name="email-input" type="email" />
                 </div>
-                <div class="input-div small right">
-                    <div class="inner-div">
-                        <label for="phone-input">Telefonszám (opcionális):</label>
-                        <input name="phone-input" type="tel">
-                    </div>
+            </div>
+            <div class="input-div small right">
+                <div class="inner-div">
+                    <label for="phone-input">Telefonszám (opcionális):</label>
+                    <input name="phone-input" type="tel" />
                 </div>
+            </div>
             <div class="input-div big">
                 <label for="msg-input">Üzenet:</label>
                 <textarea name="msg-input" id="" cols="30" rows="10"></textarea>
@@ -36,7 +36,9 @@
         flex-grow: 3;
     }
 
-    input, textarea, button {
+    input,
+    textarea,
+    button {
         border-radius: 5px;
         border: 1px solid gray;
         outline: none;
@@ -44,7 +46,7 @@
     }
 
     input {
-        width: 20em;
+        width: 20rem;
     }
 
     textarea {
@@ -52,13 +54,14 @@
     }
 
     button {
-        background-color: #EBFF00;
+        background-color: #ebff00;
         color: black;
         padding: 4px 30px;
         font-size: larger;
     }
 
-    .input-div, .inner-div {
+    .input-div,
+    .inner-div {
         display: flex;
         flex-direction: column;
     }
@@ -73,7 +76,6 @@
 
     .small {
         flex: 1 0;
-
     }
     .big {
         flex: 3 0 100%;
@@ -81,7 +83,7 @@
 
     .button {
         flex: 1 0;
-        
+
         button {
             width: 20%;
         }
