@@ -10,7 +10,7 @@
                 <span>{{ currentRoute.meta.title }}{{ currentRoute.meta.title ? ":" : "" }}</span>
             </div>
             <div v-if="windowWidth > 450" id="link">
-                <RouterLink to="/contacts">Elérhetőség</RouterLink>
+                <RouterLink v-for="(nav, index) in navItems" :key="index" :to="nav.to">{{ nav.label }}</RouterLink>
             </div>
             <div v-else id="menu-container">
                 <div id="menu" @click="menuIsOpen = !menuIsOpen">
@@ -19,11 +19,15 @@
             </div>
         </div>
 
-        <div id="menu-content" v-if="menuIsOpen">
-            <div class="item"><span>Elérhetőség</span></div>
-            <div class="item"><span>Elérhetőség</span></div>
-            <div class="item"><span>Elérhetőség</span></div>
-        </div>
+        <Transition name="menu">
+            <div id="menu-content" v-if="menuIsOpen && windowWidth < 450">
+                <RouterLink v-for="(nav, index) in navItems" :key="index" :to="nav.to">
+                    <div class="item">
+                        <span>{{ nav.label }}</span>
+                    </div>
+                </RouterLink>
+            </div>
+        </Transition>
     </div>
 </template>
 
@@ -39,17 +43,26 @@
 
     const menuIsOpen = ref(false);
 
+    const navItems = [
+        { to: "/contacts", label: "Elérhetőségek" },
+        { to: "/blogs", label: "Blog" },
+    ];
+
     onMounted(() => {
         window.onresize = () => {
             windowWidth.value = window.innerWidth;
         };
+        const func = () => {
+            if (menuIsOpen.value) menuIsOpen.value = false;
+        };
+        document.querySelector("#body")?.addEventListener("mouseup", func);
+        document.querySelector("#titlebox")?.addEventListener("mouseup", func);
     });
 </script>
 
 <style scoped lang="scss">
     #header {
         flex: 1 0 20vh;
-        background-color: $secondary-bg-color;
         display: grid;
         grid-template-rows: 2fr 1fr auto;
 
@@ -57,6 +70,11 @@
             display: flex;
             flex-direction: column;
             align-items: stretch;
+            background-color: $secondary-bg-color;
+
+            a {
+                text-decoration: none;
+            }
 
             .item {
                 padding: 1rem;
@@ -71,6 +89,8 @@
         #titlebox {
             display: grid;
             place-items: center;
+            background-color: $secondary-bg-color;
+            z-index: 2;
 
             a,
             h1 {
@@ -85,6 +105,7 @@
             background-color: $secondary-accent-bg-color;
             display: flex;
             align-items: stretch;
+            z-index: 2;
 
             #title {
                 flex: 1 1;
@@ -133,6 +154,7 @@
                 justify-content: flex-end;
                 box-sizing: border-box;
                 padding: 0 2rem 0 2rem;
+                gap: 2rem;
                 font-size: 1.3rem;
                 a {
                     color: $secondary-font-color;
@@ -143,5 +165,24 @@
                 }
             }
         }
+    }
+
+    .menu-enter-active,
+    .menu-leave-active {
+        transition: transform 0.4s ease;
+        z-index: 1;
+    }
+
+    .menu-enter-from {
+        transform: translateY(-100%);
+    }
+
+    .menu-leave-from,
+    .menu-enter-to {
+        transform: translateX(0);
+    }
+
+    .menu-leave-to {
+        transform: translateY(-100%);
     }
 </style>
