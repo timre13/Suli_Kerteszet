@@ -31,6 +31,8 @@
         }
 
         .footer-textbox {
+            box-sizing: border-box;
+            padding: 0.5rem;
             &,
             & a {
                 color: $secondary-font-color;
