@@ -66,16 +66,17 @@
         flex-direction: column;
     }
 
-    .right {
+    /* .right {
         align-items: flex-end;
     }
 
     .center {
         align-items: center;
-    }
+    } */
 
     .small {
         flex: 1 0;
+        align-items: center;
     }
     .big {
         flex: 3 0 100%;
@@ -83,9 +84,10 @@
 
     .button {
         flex: 1 0;
+        flex-direction: row;
 
         button {
-            width: 20%;
+            width: 15rem;
         }
     }
 
@@ -102,5 +104,11 @@
         justify-content: center;
         align-items: center;
         height: 100%;
+    }
+
+    @media only screen and (max-width: 805px) {
+        .button {
+            justify-content: center;
+        }
     }
 </style>
