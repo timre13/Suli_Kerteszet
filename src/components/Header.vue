@@ -98,6 +98,7 @@
                 color: $title-color;
                 font-size: 4rem;
                 text-align: center;
+                font-family: "WildWood";
             }
         }
 

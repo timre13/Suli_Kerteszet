@@ -9,7 +9,7 @@ export default defineConfig({
     css: {
         preprocessorOptions: {
             scss: {
-                additionalData: "@import '@/assets/variable.scss';",
+                additionalData: "@import '@/assets/variable.scss'; @import '@/assets/WildWood.scss';",
             },
         },
     },
