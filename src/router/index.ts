@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import ContactsView from "../views/ContactsView.vue";
+import BlogView from "../views/BlogView.vue";
+import PlantsView from "../views/PlantsView.vue";
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -15,15 +17,31 @@ const router = createRouter({
             name: "contacts",
             component: ContactsView,
             meta: {
-                title: "Elérhetőségek"
+                title: "Elérhetőségek",
+            },
+        },
+        {
+            path: "/plants",
+            name: "plants",
+            component: PlantsView,
+            meta: {
+                title: "Növények",
+            },
+        },
+        {
+            path: "/blog",
+            name: "blog",
+            component: BlogView,
+            meta: {
+                title: "Blog",
             },
         },
     ],
 });
 
 router.beforeEach((to, from, next) => {
-    document.title = to.meta.title ? `Forest Garden | ${to.meta.title}` : "Forest Garden"
-    next()
-})
+    document.title = to.meta.title ? `Forest Garden | ${to.meta.title}` : "Forest Garden";
+    next();
+});
 
 export default router;

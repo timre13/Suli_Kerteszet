@@ -10,7 +10,9 @@
                 <span>{{ currentRoute.meta.title }}{{ currentRoute.meta.title ? ":" : "" }}</span>
             </div>
             <div v-if="windowWidth > 450" id="link">
-                <RouterLink v-for="(nav, index) in navItems" :key="index" :to="nav.to">{{ nav.label }}</RouterLink>
+                <RouterLink v-for="(nav, index) in navItems" :key="index" :to="nav.path">{{
+                    nav.meta?.title
+                }}</RouterLink>
             </div>
             <div v-else id="menu-container">
                 <div id="menu" @click="menuIsOpen = !menuIsOpen">
@@ -21,9 +23,9 @@
 
         <Transition name="menu">
             <div id="menu-content" v-if="menuIsOpen && windowWidth < 450">
-                <RouterLink v-for="(nav, index) in navItems" :key="index" :to="nav.to">
+                <RouterLink v-for="(nav, index) in navItems" :key="index" :to="nav?.path">
                     <div class="item">
-                        <span>{{ nav.label }}</span>
+                        <span>{{ nav.meta?.title }}</span>
                     </div>
                 </RouterLink>
             </div>
@@ -43,10 +45,7 @@
 
     const menuIsOpen = ref(false);
 
-    const navItems = [
-        { to: "/contacts", label: "Elérhetőségek" },
-        { to: "/blogs", label: "Blog" },
-    ];
+    const navItems = router.options.routes.slice(1);
 
     onMounted(() => {
         window.onresize = () => {
