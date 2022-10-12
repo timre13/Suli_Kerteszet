@@ -25,7 +25,7 @@ const router = createRouter({
             name: "plants",
             component: PlantsView,
             meta: {
-                title: "Növények",
+                title: "Növényeink",
             },
         },
         {
