@@ -1,12 +1,26 @@
 <template>
     <div class="flex">
         <div id="cards">
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            <Card
+                text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia provident explicabo in tempore aspernatur,
+                    atque totam excepturi, esse quas voluptas quae, molestias eos sed nostrum!"
+                title="Title"
+                image="https://likebalaton.hu/wp-content/uploads/2022/04/9149474tulipanshutterstock1673844967-scaled-e1649149558645.jpg"
+            />
+            <Card title="Title" />
+            <Card
+                text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia provident explicabo in tempore aspernatur,
+                    atque totam excepturi, esse quas voluptas quae, molestias eos sed nostrum!"
+                title="Title"
+            /><Card
+                text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia provident explicabo in tempore aspernatur,
+                    atque totam excepturi, esse quas voluptas quae, molestias eos sed nostrum!"
+                title="Title"
+            /><Card
+                text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia provident explicabo in tempore aspernatur,
+                    atque totam excepturi, esse quas voluptas quae, molestias eos sed nostrum!"
+                title="Title"
+            />
         </div>
     </div>
 </template>
@@ -26,7 +40,7 @@
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
-        align-items: center;
+        align-items: stretch;
         justify-content: center;
         // display: grid;
         // grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));

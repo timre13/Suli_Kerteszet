@@ -1,15 +1,32 @@
 <template>
     <div class="card">
-        <h2 class="title">Title</h2>
-        <img src="https://via.placeholder.com/1920x1080/eee?text=16:9" alt="placeholder" class="img" />
+        <h2 class="title">{{ props.title }}</h2>
+        <img :src="props.image" alt="placeholder" class="img" />
         <p class="text">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia provident explicabo in tempore aspernatur,
-            atque totam excepturi, esse quas voluptas quae, molestias eos sed nostrum!
+            {{ props.text }}
         </p>
-        <button class="button">Több</button>
+        <button class="button" @click="WIPAlert">Több</button>
     </div>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+    const props = defineProps({
+        title: {
+            required: true,
+            type: String,
+        },
+        image: {
+            default: "https://via.placeholder.com/1920x1080/eee?text=16:9",
+            type: String,
+        },
+        text: {
+            type: String,
+        },
+    });
+
+    function WIPAlert() {
+        alert("WIP - Próbálja úra később");
+    }
+</script>
 <style lang="scss" scoped>
     $bg-color: #ffa31a;
     .card {
@@ -31,18 +48,26 @@
         .img {
             aspect-ratio: 16 / 9;
             width: 100%;
+            border: 1px solid black;
+            border-radius: 0.2rem;
         }
 
         .button {
             padding: 0.5rem;
             width: 50%;
             font-size: 1.2rem;
-            outline: none;
+            box-sizing: border-box;
             border: 1px solid black;
             border-radius: 0.2rem;
             background-color: darken($bg-color, 10);
             &:focus {
-                border: 2px solid black;
+                outline: 1px solid black;
+            }
+            &:hover {
+                background-color: darken($bg-color, 9);
+            }
+            &:active {
+                transform: translateY(1px);
             }
         }
     }
