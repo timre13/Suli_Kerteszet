@@ -2,30 +2,18 @@
     <div class="flex">
         <div id="cards">
             <Card
-                text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia provident explicabo in tempore aspernatur,
-                    atque totam excepturi, esse quas voluptas quae, molestias eos sed nostrum!"
-                title="Title"
-                image="https://likebalaton.hu/wp-content/uploads/2022/04/9149474tulipanshutterstock1673844967-scaled-e1649149558645.jpg"
-            />
-            <Card title="Title" />
-            <Card
-                text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia provident explicabo in tempore aspernatur,
-                    atque totam excepturi, esse quas voluptas quae, molestias eos sed nostrum!"
-                title="Title"
-            /><Card
-                text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia provident explicabo in tempore aspernatur,
-                    atque totam excepturi, esse quas voluptas quae, molestias eos sed nostrum!"
-                title="Title"
-            /><Card
-                text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia provident explicabo in tempore aspernatur,
-                    atque totam excepturi, esse quas voluptas quae, molestias eos sed nostrum!"
-                title="Title"
+                v-for="(plant, index) in plants"
+                :key="index"
+                :title="plant.title"
+                :text="plant.text"
+                :image="plant.image ? plant.image : undefined"
             />
         </div>
     </div>
 </template>
 <script lang="ts" setup>
     import Card from "../components/Card.vue";
+    import plants from "@/assets/plants.json";
 </script>
 <style lang="scss" scoped>
     .flex {

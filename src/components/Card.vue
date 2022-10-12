@@ -1,7 +1,7 @@
 <template>
     <div class="card">
         <h2 class="title">{{ props.title }}</h2>
-        <img :src="props.image" alt="placeholder" class="img" />
+        <img :src="props.image" class="img" />
         <p class="text">
             {{ props.text }}
         </p>
