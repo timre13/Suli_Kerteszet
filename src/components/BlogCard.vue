@@ -2,7 +2,10 @@
     <div class="blog-card">
         <div class="left-div">
             <h2>{{ props.title }}</h2>
-            <p>{{ props.description.substring(0, 300)+"..." }}</p>
+            <p>
+                {{ props.description.substring(0, 300)+"..." }}
+                <span class="text-shadow"></span>
+            </p>
         </div>
         <img :src="props.img_src" />
     </div>
@@ -27,14 +30,29 @@
 
 <style scoped lang="scss">
     $bg-color: #ffa31a;
+    $card-border-rad: 8px;
     .blog-card {
         display: flex;
         background: $bg-color;
-        width: 400px;
+        width: 500px;
         padding: 10px;
-        border-radius: 8px;
+        border-radius: $card-border-rad;
         flex-shrink: 0;
         cursor: pointer;
+
+        p {
+            position: relative;
+        }
+
+        .text-shadow {
+            box-shadow: inset -10px -40px 40px 0px $bg-color;
+            border-radius: $card-border-rad;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
 
         img {
             max-height: 120px;
