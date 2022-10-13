@@ -2,7 +2,7 @@
 
 <template>
     <div id="wrapper">
-        <form action="" method="post">
+        <form>
             <div class="input-div small">
                 <div class="inner-div">
                     <label for="name-input">Név:</label>
