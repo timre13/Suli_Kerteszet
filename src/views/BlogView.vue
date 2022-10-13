@@ -1,23 +1,14 @@
 <script setup lang="ts">
     import BlogCard from "../components/BlogCard.vue";
+    import blogs from "@/assets/blogs.json"
 </script>
 
 <template>
     <div id="blog-card-div">
-        <BlogCard
-            :title="'foo'"
-            :description="'foo'"
-            :img_src="'https://www.gardeningknowhow.com/wp-content/uploads/2008/05/rubber-plant.jpg'"
-        ></BlogCard>
-        <BlogCard
-            :title="'foo'"
-            :description="'foo'"
-            :img_src="'https://www.gardeningknowhow.com/wp-content/uploads/2008/05/rubber-plant.jpg'"
-        ></BlogCard>
-        <BlogCard
-            :title="'foo'"
-            :description="'foo'"
-            :img_src="'https://www.gardeningknowhow.com/wp-content/uploads/2008/05/rubber-plant.jpg'"
+        <BlogCard v-for="card in blogs"
+            :title="card.title"
+            :description="card.description"
+            :img_src="card.img_src ? card.img_src : undefined"
         ></BlogCard>
     </div>
 </template>
@@ -29,5 +20,6 @@
         flex-wrap: wrap;
         gap: 20px;
         margin: 20px;
+        justify-content: center;
     }
 </style>
