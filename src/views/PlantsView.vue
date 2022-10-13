@@ -7,6 +7,7 @@
                 :title="plant.title"
                 :text="plant.text"
                 :image="plant.image ? plant.image : undefined"
+                :index="index"
             />
         </div>
     </div>

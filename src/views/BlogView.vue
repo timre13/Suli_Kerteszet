@@ -1,11 +1,12 @@
 <script setup lang="ts">
     import BlogCard from "../components/BlogCard.vue";
-    import blogs from "@/assets/blogs.json"
+    import blogs from "@/assets/blogs.json";
 </script>
 
 <template>
     <div id="blog-card-div">
-        <BlogCard v-for="card in blogs"
+        <BlogCard
+            v-for="card in blogs"
             :title="card.title"
             :description="card.description"
             :img_src="card.img_src ? card.img_src : undefined"

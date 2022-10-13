@@ -2,13 +2,17 @@
     <div class="card">
         <h2 class="title">{{ props.title }}</h2>
         <img :src="props.image" class="img" />
-        <p class="text">
-            {{ props.text }}
-        </p>
-        <button class="button" @click="WIPAlert">Több</button>
+        <div class="blur-container">
+            <p class="text">
+                {{ props.text?.substring(0, 300) + "..." }}
+            </p>
+            <div class="blur"></div>
+        </div>
+        <RouterLink class="button" :to="`plant/${props.index}`"> Több </RouterLink>
     </div>
 </template>
 <script setup lang="ts">
+    import { RouterLink } from "vue-router";
     const props = defineProps({
         title: {
             required: true,
@@ -21,11 +25,11 @@
         text: {
             type: String,
         },
+        index: {
+            type: Number,
+            required: true,
+        },
     });
-
-    function WIPAlert() {
-        alert("WIP - Próbálja úra később");
-    }
 </script>
 <style lang="scss" scoped>
     $bg-color: #ffa31a;
@@ -40,6 +44,19 @@
         background-color: $bg-color;
         border: 1px solid black;
         border-radius: 0.8rem;
+
+        .blur-container {
+            position: relative;
+
+            .blur {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                box-shadow: inset 0px -25px 30px 0px $bg-color;
+            }
+        }
 
         .title {
             font-size: 3rem;
@@ -60,6 +77,10 @@
             border: 1px solid black;
             border-radius: 0.2rem;
             background-color: darken($bg-color, 10);
+            display: grid;
+            place-items: center;
+            color: inherit;
+            text-decoration: none;
             &:focus {
                 outline: 1px solid black;
             }
