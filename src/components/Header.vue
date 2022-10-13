@@ -45,7 +45,10 @@
 
     const menuIsOpen = ref(false);
 
-    const navItems = router.options.routes.slice(1);
+    const navItems = router.options.routes.filter(val => {
+        if (val.meta?.ignored) return false;
+        return true;
+    });
 
     onMounted(() => {
         window.onresize = () => {
