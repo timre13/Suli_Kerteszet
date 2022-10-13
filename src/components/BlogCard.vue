@@ -37,7 +37,6 @@
         width: 500px;
         padding: 10px;
         border-radius: $card-border-rad;
-        flex-shrink: 0;
         cursor: pointer;
 
         p {
