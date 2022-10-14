@@ -7,7 +7,7 @@ import SingleBlogView from "../views/SingleBlogView.vue";
 import SinglePlantView from "../views/SinglePlantView.vue";
 
 const router = createRouter({
-    history: createWebHistory(import.meta.env.BASE_URL),
+    history: createWebHistory(window.location.pathname),
     routes: [
         {
             path: "/",
