@@ -6,10 +6,11 @@
 <template>
     <div id="blog-card-div">
         <BlogCard
-            v-for="card in blogs"
+            v-for="(card, i) in blogs"
             :title="card.title"
             :description="card.description"
             :img_src="card.img_src ? card.img_src : undefined"
+            :index="i"
         ></BlogCard>
     </div>
 </template>

@@ -1,14 +1,14 @@
 <template>
-    <div class="blog-card">
+    <RouterLink class="blog-card" :to="`blog/${props.index}`">
         <div class="left-div">
             <h2>{{ props.title }}</h2>
             <p>
-                {{ props.description.substring(0, 300)+"..." }}
+                {{ props.description.substring(0, 300) + "..." }}
                 <span class="text-shadow"></span>
             </p>
         </div>
         <img :src="props.img_src" />
-    </div>
+    </RouterLink>
 </template>
 
 <script setup lang="ts">
@@ -19,13 +19,17 @@
         },
         description: {
             type: String,
-            default: ""
+            default: "",
         },
         img_src: {
             type: String,
-            default: "https://media.tenor.com/_BiwWBWhYucAAAAC/what-huh.gif"
+            default: "https://media.tenor.com/_BiwWBWhYucAAAAC/what-huh.gif",
         },
-    })
+        index: {
+            type: Number,
+            required: true,
+        },
+    });
 </script>
 
 <style scoped lang="scss">
@@ -38,6 +42,8 @@
         padding: 10px;
         border-radius: $card-border-rad;
         cursor: pointer;
+        color: inherit;
+        text-decoration: none;
 
         p {
             position: relative;
