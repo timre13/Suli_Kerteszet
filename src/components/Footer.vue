@@ -22,8 +22,8 @@
         grid-template-rows: 3fr 1fr;
         align-items: stretch;
         box-sizing: border-box;
-        padding: 0.5rem;
-        padding-top: 2rem;
+        padding: 0.5rem 2rem 0 2rem;
+        // padding-top: 2rem;
         font-size: 1.1rem;
 
         #copyright {

@@ -1,19 +1,20 @@
 [
     {
-        "title": "Title",
+        "title": "Title1",
         "text": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia provident explicabo in tempore aspernatur, atque totam excepturi, esse quas voluptas quae, molestias eos sed nostrum!",
-        "image": "https://likebalaton.hu/wp-content/uploads/2022/04/9149474tulipanshutterstock1673844967-scaled-e1649149558645.jpg"
+        "image": "https://likebalaton.hu/wp-content/uploads/2022/04/9149474tulipanshutterstock1673844967-scaled-e1649149558645.jpg",
+        "price": 5000
     },
     {
-        "title": "Title",
+        "title": "Title2",
         "text": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia provident explicabo in tempore aspernatur, atque totam excepturi, esse quas voluptas quae, molestias eos sed nostrum!"
     },
     {
-        "title": "Title",
+        "title": "Title3",
         "text": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia provident explicabo in tempore aspernatur, atque totam excepturi, esse quas voluptas quae, molestias eos sed nostrum!"
     },
     {
-        "title": "Title",
+        "title": "Title4",
         "text": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia provident explicabo in tempore aspernatur, atque totam excepturi, esse quas voluptas quae, molestias eos sed nostrum!"
     },
     {
