@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import ContactsView from "../views/ContactsView.vue";
 import BlogView from "../views/BlogView.vue";
@@ -7,7 +7,7 @@ import SingleBlogView from "../views/SingleBlogView.vue";
 import SinglePlantView from "../views/SinglePlantView.vue";
 
 const router = createRouter({
-    history: createWebHistory(window.location.pathname),
+    history: createWebHashHistory(window.location.pathname),
     routes: [
         {
             path: "/",
