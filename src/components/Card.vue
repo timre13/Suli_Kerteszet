@@ -44,6 +44,7 @@
         background-color: $bg-color;
         border: 1px solid black;
         border-radius: 0.8rem;
+        min-width: 20rem;
 
         .blur-container {
             position: relative;
