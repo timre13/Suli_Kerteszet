@@ -8,6 +8,7 @@
                 :text="tool.text"
                 :image="tool.image ? tool.image : undefined"
                 :index="index"
+                :price="tool.price"
             />
         </div>
     </div>

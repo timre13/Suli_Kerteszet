@@ -4,11 +4,17 @@
         <img :src="props.image" class="img" />
         <div class="blur-container">
             <p class="text">
-                {{ props.text?.substring(0, 300) + "..." }}
+                {{ props.text?.substring(0, 150) + "..." }}
             </p>
             <div class="blur"></div>
         </div>
-        <RouterLink class="button" :to="`plant/${props.index}`"> Több </RouterLink>
+        <div class="price">
+            <span><b>Ár:</b> {{ props.price ? props.price : "Nem elérhető" }}</span>
+        </div>
+        <div class="buttons">
+            <button class="button disabled" disabled>Vásárlás</button>
+            <RouterLink class="button" :to="`plant/${props.index}`"> Több </RouterLink>
+        </div>
     </div>
 </template>
 <script setup lang="ts">
@@ -29,6 +35,9 @@
             type: Number,
             required: true,
         },
+        price: {
+            type: Number,
+        },
     });
 </script>
 <style lang="scss" scoped>
@@ -39,7 +48,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        gap: 2rem;
+        gap: 1.2rem;
         padding: 1rem 2rem 1rem 2rem;
         background-color: $bg-color;
         border: 1px solid black;
@@ -70,9 +79,20 @@
             border-radius: 0.2rem;
         }
 
+        .price {
+            font-size: 1.8rem;
+        }
+
+        .buttons {
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
         .button {
             padding: 0.5rem;
-            width: 50%;
+            width: 45%;
             font-size: 1.2rem;
             box-sizing: border-box;
             border: 1px solid black;
@@ -90,6 +110,18 @@
             }
             &:active {
                 transform: translateY(1px);
+            }
+        }
+        .disabled {
+            cursor: not-allowed;
+            background-color: darken($bg-color, 20);
+
+            &:hover {
+                background-color: darken($bg-color, 20);
+            }
+
+            &:active {
+                transform: translateY(0px);
             }
         }
     }
