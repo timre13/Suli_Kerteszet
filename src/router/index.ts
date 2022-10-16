@@ -3,8 +3,10 @@ import HomeView from "../views/HomeView.vue";
 import ContactsView from "../views/ContactsView.vue";
 import BlogView from "../views/BlogView.vue";
 import PlantsView from "../views/PlantsView.vue";
+import ToolsView from "../views/ToolsView.vue";
 import SingleBlogView from "../views/SingleBlogView.vue";
 import SinglePlantView from "../views/SinglePlantView.vue";
+import SingleToolView from "../views/SingleToolView.vue";
 
 const router = createRouter({
     history: createWebHashHistory(window.location.pathname),
@@ -37,6 +39,22 @@ const router = createRouter({
             path: "/plant/:plant",
             name: "plant",
             component: SinglePlantView,
+            meta: {
+                ignored: true,
+            },
+        },
+        {
+            path: "/tools",
+            name: "tools",
+            component: ToolsView,
+            meta: {
+                title: "Eszközeink",
+            },
+        },
+        {
+            path: "/tool/:tool",
+            name: "tool",
+            component: SingleToolView,
             meta: {
                 ignored: true,
             },
