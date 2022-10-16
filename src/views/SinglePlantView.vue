@@ -4,7 +4,7 @@
             <h1>{{ currentPlant.title }}</h1>
         </div>
         <div id="image">
-            <img :src="currentPlant.image" />
+            <img :src="currentPlant.image" v-if="currentPlant.image" />
         </div>
         <div id="info">
             <span>{{ currentPlant.text }}</span>

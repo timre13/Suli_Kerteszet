@@ -4,7 +4,7 @@
             <h1>{{ currentTool.title }}</h1>
         </div>
         <div id="image">
-            <img :src="currentTool.image" />
+            <img :src="currentTool.image" v-if="currentTool.image" />
         </div>
         <div id="info">
             <span>{{ currentTool.text }}</span>
