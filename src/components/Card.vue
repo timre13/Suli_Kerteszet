@@ -13,7 +13,7 @@
         </div>
         <div class="buttons">
             <button class="button disabled" disabled>Vásárlás</button>
-            <RouterLink class="button" :to="`plant/${props.index}`"> Több </RouterLink>
+            <RouterLink class="button" :to="`${props.sub_page_prefix}/${props.index}`"> Több </RouterLink>
         </div>
     </div>
 </template>
@@ -38,6 +38,10 @@
         price: {
             type: Number,
         },
+        sub_page_prefix: {
+            type: String,
+            required: true,
+        }
     });
 </script>
 <style lang="scss" scoped>

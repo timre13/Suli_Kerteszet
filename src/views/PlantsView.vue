@@ -9,6 +9,7 @@
                 :image="plant.image ? plant.image : undefined"
                 :index="index"
                 :price="plant.price"
+                :sub_page_prefix="'plant'"
             />
         </div>
     </div>

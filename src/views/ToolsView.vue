@@ -9,6 +9,7 @@
                 :image="tool.image ? tool.image : undefined"
                 :index="index"
                 :price="tool.price"
+                :sub_page_prefix="'tool'"
             />
         </div>
     </div>
