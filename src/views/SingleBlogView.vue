@@ -11,9 +11,11 @@
 
 <template>
     <div id="main-container">
-        <div id="title"><h1>{{ currentBlog.title }}</h1></div>
+        <div id="title">
+            <h1>{{ currentBlog.title }}</h1>
+        </div>
         <div id="content-container">
-            <img id="image" v-if="currentBlog.img_src" :src="currentBlog.img_src">
+            <img id="image" v-if="currentBlog.img_src" :src="currentBlog.img_src" />
             <div id="description">{{ currentBlog.description }}</div>
         </div>
     </div>
@@ -36,11 +38,31 @@
             }
 
             #image {
+                max-width: 40rem;
+                width: 90vw;
                 max-height: 800px;
                 border: 1px solid black;
                 float: right;
                 margin: 20px;
             }
+        }
+    }
+
+    @media screen and (max-width: 1000px) {
+        #main-container {
+            padding: 2rem !important;
+        }
+
+        #content-container {
+            display: flex !important;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #image {
+            float: initial !important;
+            flex-shrink: 0;
+            flex-grow: 0;
         }
     }
 </style>

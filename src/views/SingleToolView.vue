@@ -34,11 +34,13 @@
         width: 100%;
         display: grid;
         grid-template-columns: 2fr 1fr;
-        grid-template-rows: 1fr 5fr;
+        grid-template-rows: minmax(1fr, 10rem) 5fr;
 
         #image {
             grid-row: span 2;
             overflow: hidden;
+            display: grid;
+            place-items: center;
             img {
                 width: 100%;
                 border: 1px solid black;
@@ -57,6 +59,7 @@
             flex-direction: column;
             justify-content: space-around;
             font-size: 1.3rem;
+            gap: 0.5rem;
 
             .price {
                 font-size: 2rem;
@@ -70,6 +73,20 @@
                 border: 1px solid black;
                 font-size: 2rem;
                 cursor: not-allowed;
+            }
+        }
+    }
+
+    @media screen and (max-width: 705px) {
+        #toolcontainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 2rem;
+
+            #info {
+                text-align: justify;
             }
         }
     }
