@@ -9,7 +9,7 @@
             <div id="title">
                 <span>{{ currentRoute.meta.title }}{{ currentRoute.meta.title ? ":" : "" }}</span>
             </div>
-            <div v-if="windowWidth > 450" id="link">
+            <div v-if="windowWidth > 705" id="link">
                 <RouterLink v-for="(nav, index) in navItems" :key="index" :to="nav.path">{{
                     nav.meta?.title
                 }}</RouterLink>
@@ -22,7 +22,7 @@
         </div>
 
         <Transition name="menu">
-            <div id="menu-content" v-if="menuIsOpen && windowWidth < 450">
+            <div id="menu-content" v-if="menuIsOpen && windowWidth < 705">
                 <RouterLink v-for="(nav, index) in navItems" :key="index" :to="nav?.path">
                     <div class="item">
                         <span>{{ nav.meta?.title }}</span>
