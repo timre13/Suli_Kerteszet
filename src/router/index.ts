@@ -20,14 +20,6 @@ const router = createRouter({
             },
         },
         {
-            path: "/contacts",
-            name: "contacts",
-            component: ContactsView,
-            meta: {
-                title: "Elérhetőségek",
-            },
-        },
-        {
             path: "/plants",
             name: "plants",
             component: PlantsView,
@@ -73,6 +65,14 @@ const router = createRouter({
             component: BlogView,
             meta: {
                 title: "Blog",
+            },
+        },
+        {
+            path: "/contacts",
+            name: "contacts",
+            component: ContactsView,
+            meta: {
+                title: "Elérhetőségek",
             },
         },
     ],
