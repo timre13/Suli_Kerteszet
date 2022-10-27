@@ -14,7 +14,8 @@
     },
     {
         "title": "Blog Title",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam porta eros sed bibendum elementum. Proin nec justo et metus consequat feugiat vitae sed nisl. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec tempor viverra ornare. Mauris quis tristique orci, a consequat sem. Nam rutrum mattis turpis et tempus. Etiam at lectus vehicula, consectetur quam vel, eleifend justo."
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam porta eros sed bibendum elementum. Proin nec justo et metus consequat feugiat vitae sed nisl. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec tempor viverra ornare. Mauris quis tristique orci, a consequat sem. Nam rutrum mattis turpis et tempus. Etiam at lectus vehicula, consectetur quam vel, eleifend justo.",
+        "img_src": "https://images.pexels.com/photos/334978/pexels-photo-334978.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
         "title": "Blog Title",

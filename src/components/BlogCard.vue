@@ -1,13 +1,13 @@
 <template>
     <RouterLink class="blog-card" :to="`blog/${props.index}`">
-        <div class="left-div">
+        <div class="card-content">
+            <div class="img-div"><img :src="props.img_src" /></div>
             <h2>{{ props.title }}</h2>
             <p>
                 {{ props.description.substring(0, 300) + "..." }}
-                <span class="text-shadow"></span>
+                <div class="text-shadow"></div>
             </p>
         </div>
-        <img :src="props.img_src" />
     </RouterLink>
 </template>
 
@@ -23,7 +23,7 @@
         },
         img_src: {
             type: String,
-            default: "https://media.tenor.com/_BiwWBWhYucAAAAC/what-huh.gif",
+            default: "https://via.placeholder.com/1920x1080/eee?text=Placeholder",
         },
         index: {
             type: Number,
@@ -44,26 +44,42 @@
         cursor: pointer;
         color: inherit;
         text-decoration: none;
+        position: relative;
 
         p {
             position: relative;
         }
 
+        .card-content {
+            overflow: hidden;
+            
+            .img-div {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                aspect-ratio: 16 / 9;
+                width: 12rem;
+                height: fit-content;
+                float: right;
+            }
+        }
+
         .text-shadow {
             box-shadow: inset -10px -40px 40px 0px $bg-color;
             border-radius: $card-border-rad;
-            width: 100%;
+            width: 300%;
             height: 100%;
             position: absolute;
-            left: 0;
-            top: 0;
+            left: -150%;
+            bottom: 0;
+            overflow: hidden;
+            z-index: 2;
         }
 
         img {
-            max-height: 120px;
-            margin-left: auto;
+            max-height: 100%;
             border-radius: 4px;
-            margin-left: 5px;
+            z-index: 10;
         }
     }
 
