@@ -110,7 +110,7 @@
                 outline: 1px solid black;
             }
             &:hover {
-                background-color: darken($bg-color, 9);
+                background-color: darken($bg-color, 6);
             }
             &:active {
                 transform: translateY(1px);
