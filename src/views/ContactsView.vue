@@ -6,13 +6,13 @@
             <div class="input-div small">
                 <div class="inner-div">
                     <label for="name-input">Név:</label>
-                    <input name="name-input" />
+                    <input name="name-input" required />
                 </div>
             </div>
             <div class="input-div small center">
                 <div class="inner-div">
                     <label for="email-input">E-mail:</label>
-                    <input name="email-input" type="email" />
+                    <input name="email-input" type="email" required />
                 </div>
             </div>
             <div class="input-div small right">
@@ -23,7 +23,7 @@
             </div>
             <div class="input-div big">
                 <label for="msg-input">Üzenet:</label>
-                <textarea name="msg-input" id="" cols="30" rows="10"></textarea>
+                <textarea name="msg-input" id="" cols="30" rows="10" required></textarea>
             </div>
             <div class="input-div button"><button type="submit">Küldés</button></div>
         </form>
@@ -46,11 +46,13 @@
     }
 
     input {
-        width: 20rem;
+        max-width: 20rem;
+        width: 80vw;
     }
 
     textarea {
         resize: none;
+        width: 80vw;
     }
 
     button {
@@ -89,6 +91,7 @@
         button {
             width: 15rem;
         }
+        margin-bottom: 30px;
     }
 
     form {
@@ -104,6 +107,7 @@
         justify-content: center;
         align-items: center;
         height: 100%;
+        margin-top: 15px;
     }
 
     @media only screen and (max-width: 805px) {
