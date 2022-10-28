@@ -20,7 +20,8 @@
         margin: 40px auto;
 
         img {
-            max-width: 500px;
+            width: 500px;
+            max-width: 90%;
             margin: 20px;
             float: right;
             border-radius: 10px;
